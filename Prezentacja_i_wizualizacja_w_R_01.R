@@ -1,3 +1,7 @@
+rm(list=ls())
+getwd()
+setwd('D:/SGH/r1s1/Prezentacja i wizualizacja danych/PIWD_01/PIWD_01')
+
 # ZADANIE 1
 
 df_gold <- read.table(file = 'data/GOLD-ZLOTO.csv', sep=';', dec=',', header = T)
@@ -14,6 +18,8 @@ x <- df_gold$Otwarcie - df_gold$Zamkniecie
 hist(x, col=c('red','blue'), breaks = 100)
 
 # ZADANIE 2
+
+rm(list=ls())
 
 df <- read.table(file = 'data/95.csv', sep=';', dec='.', header=T)
 str(df)
@@ -40,3 +46,27 @@ print(head(aggr))
 
 x11()
 plot(aggr$cena_brutto,type="l",col="orange")
+
+# ZADANIE 3
+rm(list=ls())
+
+df = read.table(file = 'data/PL_GEN_WIATR_20231010_20231010173514.csv', sep=';',dec=',', header = T)
+print(head(df))
+print(colnames(df))
+
+?rbind
+?lapply  
+
+typeof(df$Generacja.źródeł.fotowoltaicznych)
+
+plot(df$Generacja.źródeł.fotowoltaicznych)
+
+skumulowana <- 0
+
+for (i in 1:nrow(df)) {
+  skumulowana <- skumulowana + df$Generacja.źródeł.fotowoltaicznych[i]
+  df$fotowoltaicznych_skumulowane[i] <- skumulowana
+}
+
+plot(df$fotowoltaicznych_skumulowane)
+
