@@ -1,2 +1,2 @@
 # SGH_studies
-All project I've done during Master's Degree studies at Warsaw School of Economics
+All projects I completed during my master's studies at the Warsaw School of Economics.
