@@ -31,4 +31,28 @@ data statystyka_opisowa;
 	l3 = 10;
 	s = sum(of l1 - l3);
 	s1 = sum(l1 - l3);
+	m = mean(of l1 - l3);
+	std = std(of l1 - l3);
 run;
+
+/* tablice */
+data t;
+	array tab {2000:2024} t2000-t2024;
+	t2000 = 5;
+	tab[2001] = 10;
+
+	i = 2002;
+	tab[i] = 15;
+
+	i = i + 1;
+	tab[i] = 20;
+run;
+
+/* petle */
+
+
+
+
+
+
+
